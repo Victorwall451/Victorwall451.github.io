@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Keep Victor</title>
+        <link rel="shortcut icon" href="images/logo.png">
+        <script>
+            function salvar(){
+                var title =document.getElementById("title").value;
+                var text =document.getElementById("text").value;
+                var data=localStorage.getItem("keep");
+                data=JSON.parse(data);
+                if(!data){
+                    data=[];
+                }
+                data.push({
+                    title:title,
+                    text:text
+                });
+                data=JSON.stringify(data);
+                localStorage.setItem("keep",data);
+            }
+        </script>
+        <style>
+            body{
+                background-color: #202124;
+                
+            }
+             .bloco input {
+                background-color: rgba(241,243,244,0.24);
+                padding:10px;
+                padding-right: 45px;
+                padding-left: 45px ;
+                color: #ffffff
+                
+            }
+            .bloco textarea{
+                background-color: rgba(241,243,244,0.24);
+                color: #ffffff
+            }
+            .bloco div{
+                margin-bottom: 10px;
+            }
+            .bloco{
+                margin:0 auto;
+                width: 270px;
+                font-family: Arial;
+                
+            }
+            .button{
+                background-color:rgba(241,243,244,0.24);
+                color:#ffffff; 
+                border: 0;  
+                padding: 5px;         
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bloco">
+            <div>
+                <input type="text" id="title" placeholder="Inserir Titulo da Nota">
+            </div>
+            <div>
+                <textarea name="texto" id="text" cols="30" rows="10" placeholder="Inserir Conteudo da Nota"></textarea>
+            </div>
+            <div>
+                <button onclick="salvar()" class="button">Salvar Nota</button>
+            </div>
+
+        </div>
+    </body>
+</html>
