@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Nether</title>
+    <script>
+        function calcular(){
+            var x=document.getElementById("X").value;
+            var y=document.getElementById("Y").value;
+            var z=document.getElementById("Z").value;
+            document.getElementById("text").innerHTML="X: "+x/8+"<br><br> Y: "+y+"<br><br> Z:"+z/8;
+        }    
+    </script>
+    <style>
+        body{
+            background-image: url("calculadora-portal-nether-scaled.jpg");
+            color:#ffffff;
+            font-family:Arial;
+            font-size: 40px;
+            background-color: black;
+        }
+        .square{
+            background-color: rgba(0,0,0, 0.6);
+            margin: 0 auto;
+            width: 60%;
+            padding: 10px;
+            border-radius: 10px ;
+        }
+    </style>
+</head>
+<body>
+    <div class="square">
+        <h2>Insira As Cordenadas que Você quer Ir:</h2>
+        <input type="text" id="X" />
+        <input type="text" id="Y" />
+        <input type="text" id="Z" />
+        <button id="botao" onclick="calcular()">Calcular</button>
+        <p id="text"></p>
+    </div>
+</body>
+</html>
